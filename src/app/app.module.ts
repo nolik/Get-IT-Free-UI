@@ -48,6 +48,7 @@ import {ListUploadComponent} from './adverts/add-advert/file-upload/list-upload/
 import {DetailsUploadComponent} from './adverts/add-advert/file-upload/details-upload/details-upload.component';
 import {FormUploadComponent} from './adverts/add-advert/file-upload/form-upload/form-upload.component';
 import {UploadFileService} from './service/upload-file.service';
+import { UserCabinetComponent } from './user-cabinet/user-cabinet.component';
 import {MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 
@@ -73,7 +74,8 @@ export function initUserFactory(userService: UserService) {
     ChangePasswordComponent,
     ListUploadComponent,
     DetailsUploadComponent,
-    FormUploadComponent
+    FormUploadComponent,
+    UserCabinetComponent
   ],
     imports: [
         BrowserAnimationsModule,

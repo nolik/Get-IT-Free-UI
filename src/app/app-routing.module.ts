@@ -11,12 +11,14 @@ import {SignupComponent} from './signup/signup.component';
 import {GuestGuard, LoginGuard} from './guard';
 import {LoginComponent} from './login';
 import {ChangePasswordComponent} from './change-password';
+import { UserCabinetComponent } from './user-cabinet/user-cabinet.component';
 
 
 const appRoutes: Routes = [
   {path: '', component: AdvertListComponent, pathMatch: 'full'},
   {path: 'advert-list', component: AdvertListComponent},
   {path: 'add-advert', component: AddAdvertComponent},
+  { path: 'user-cabinet', component: UserCabinetComponent },
   {
     path: 'advert-detail', children: [
       {path: ':_id', component: AdvertDetailComponent, resolve: {detailedAdvert: AdvertDetailResolver}},
