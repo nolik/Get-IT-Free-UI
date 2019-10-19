@@ -3,72 +3,79 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class ConfigService {
 
-  private _api_url = '/api';
+    private _api_url = '/api';
 
-  private _refresh_token_url = this._api_url + '/refresh';
+    private _refresh_token_url = this._api_url + '/refresh';
 
-  private _login_url = this._api_url + '/login';
+    private _login_url = this._api_url + '/login';
 
-  private _logout_url = this._api_url + '/logout';
+    private _logout_url = this._api_url + '/logout';
 
-  private _change_password_url = this._api_url + '/changePassword';
+    private _change_password_url = this._api_url + '/changePassword';
 
-  private _signup_url = this._api_url + '/signup';
+    private _signup_url = this._api_url + '/signup';
 
-  private _adverts_url = this._api_url + '/adverts';
+    private _adverts_url = this._api_url + '/adverts';
 
-  private _add_advert_url = this._api_url + '/add-advert';
+    private _add_advert_url = this._api_url + '/add-advert';
 
-  private _get_user_info = this._api_url + '/get-user-info';
+    private _user_add_advert_url = this._api_url + '/users';
 
-  private _file_upload = this._api_url + '/file-upload';
+    private _get_user_info = this._api_url + '/get-user-info';
 
-  private _get_all_files = this._api_url + '/get-all-files';
+    private _file_upload = this._api_url + '/file-upload';
 
-  get refresh_token_url(): string {
-    return this._refresh_token_url;
-  }
+    private _get_all_files = this._api_url + '/get-all-files';
 
-  get login_url(): string {
-    return this._login_url;
-  }
+    get refresh_token_url(): string {
+        return this._refresh_token_url;
+    }
 
-  get logout_url(): string {
-    return this._logout_url;
-  }
+    get login_url(): string {
+        return this._login_url;
+    }
 
-  get change_password_url(): string {
-    return this._change_password_url;
-  }
+    get logout_url(): string {
+        return this._logout_url;
+    }
 
-  get signup_url(): string {
-    return this._signup_url;
-  }
+    get change_password_url(): string {
+        return this._change_password_url;
+    }
 
-  get adverts_url(): string {
-    return this._adverts_url;
-  }
+    get signup_url(): string {
+        return this._signup_url;
+    }
 
-  get get_user_info(): string {
-    return this._get_user_info;
-  }
+    get adverts_url(): string {
+        return this._adverts_url;
+    }
 
-  get add_advert_url(): string {
-    return this._add_advert_url;
-  }
+    get get_user_info(): string {
+        return this._get_user_info;
+    }
 
-  get get_all_files(): string {
-    return this._get_all_files;
-  }
+    get add_advert_url(): string {
+        return this._add_advert_url;
+    }
 
-  set get_all_files(value: string) {
-    this._get_all_files = value;
-  }
-  get file_upload(): string {
-    return this._file_upload;
-  }
+    get add_advert_url_new(): string {
+        return this._user_add_advert_url;
+    }
 
-  set file_upload(value: string) {
-    this._file_upload = value;
-  }
+    get get_all_files(): string {
+        return this._get_all_files;
+    }
+
+    set get_all_files(value: string) {
+        this._get_all_files = value;
+    }
+
+    get file_upload(): string {
+        return this._file_upload;
+    }
+
+    set file_upload(value: string) {
+        this._file_upload = value;
+    }
 }

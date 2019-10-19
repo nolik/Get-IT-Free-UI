@@ -12,11 +12,14 @@ export class DataStorageService {
   }
 
   getAdverts(): Observable<AdvertModel[]> {
-    console.log('call DataStorageService');
+    console.log('call DataStorageService + ' + this.config.adverts_url);
     return this.apiService.get(this.config.adverts_url);
   }
 
-  addNewAdvert(newAdvert: AdvertModel) {
-    return this.apiService.post(this.config.add_advert_url, newAdvert);
+  add_advert_new(userId: number, newAdvert: AdvertModel) {
+    const path: string = this.config.add_advert_url_new + `/${userId}/add-advert`;
+    console.log(path);
+    return this.apiService.post(path, newAdvert)
+        .subscribe(any => console.log(any));
   }
 }

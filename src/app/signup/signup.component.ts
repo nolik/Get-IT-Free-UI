@@ -52,6 +52,7 @@ export class SignupComponent implements OnInit, OnDestroy {
     this.form = this.formBuilder.group({
       username: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(64)])],
       password: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(32)])],
+      phone: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(12)])],
       email: ['', Validators.compose([Validators.required, Validators.email, Validators.minLength(3), Validators.maxLength(32)])]
     });
   }
