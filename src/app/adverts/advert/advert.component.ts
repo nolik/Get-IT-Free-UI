@@ -12,6 +12,7 @@ import {UserService} from '../../service/user.service';
 export class AdvertComponent implements OnInit {
     @Input() advert: AdvertModel;
     @Input() index: number;
+    isBooked = false;
 
     constructor(private advertService: AdvertService,
                 private userService: UserService,
@@ -22,11 +23,14 @@ export class AdvertComponent implements OnInit {
     }
 
     onSelected() {
-        this.router.navigate(['advert-detail/', this.advert._id]);
+        // this.router.navigate(['advert-detail/', this.advert.id]);
     }
 
-    onBook(id: number) {
-        console.log('boook');
-      // this.userService.
+    onBook() {
+        console.log(JSON.stringify(this.advert));
+        this.userService.bookAdvert(this.advert.id)
+            .subscribe(
+                () => this.isBooked = true
+            );
     }
 }

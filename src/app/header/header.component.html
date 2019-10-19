@@ -30,7 +30,9 @@
                     routerLink="/user-cabinet">
                 <span>{{userName()}}</span>
             </button>
-            <img [src]="photoURL" style="max-width:15%; border-radius:50%">
+            <img
+                    *ngIf="hasSignedIn()"
+                    [src]="photoURL" style="max-width:15%; border-radius:50%">
 
         </div>
     </div>

@@ -11,10 +11,16 @@
                 </p>
             </mat-card-content>
             <button
-                    *ngIf="userService.currentUser !== undefined"
-                    (click)="onBook(advert._id)"
+                    *ngIf="userService.currentUser !== undefined && !isBooked"
+                    (click)="onBook()"
                     mat-button>
                 Book
+            </button>
+            <button
+                    *ngIf="isBooked"
+                    (click)="onBook()"
+                    mat-button>
+                Get Contact Info
             </button>
         </mat-card>
     </div>

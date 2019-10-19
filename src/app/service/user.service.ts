@@ -1,10 +1,9 @@
-
 import {map} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
 import {ApiService} from './api.service';
 import {ConfigService} from './config.service';
-import { AdvertModel } from '../adverts/advert/advert.model';
-import { Observable } from 'rxjs';
+import {AdvertModel} from '../adverts/advert/advert.model';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class UserService {
@@ -28,21 +27,21 @@ export class UserService {
             .catch(() => null);
     }
 
-  getUserInfo() {
-    return this.apiService.get(this.config.get_user_info).pipe(map(user => this.currentUser = user));
-  }
+    getUserInfo() {
+        return this.apiService.get(this.config.get_user_info).pipe(map(user => this.currentUser = user));
+    }
 
-  getUserAdverts(): Observable<AdvertModel[]> {
-    const path = this.config.user_advert + `/${this.currentUser.id}/adverts`;
-    console.log(path);
-    return this.apiService.get(path);
-  }
+    getUserAdverts(): Observable<AdvertModel[]> {
+        const path = this.config.user_advert + `/${this.currentUser.id}/adverts`;
+        console.log(path);
+        return this.apiService.get(path);
+    }
 
-    // bookAdvert(): string {
-    //     const path: string = this.config.users_api + `/${userId}/add-advert`;
-    //     console.log(path);
-    //     return this.apiService.post(path, newAdvert)
-    //         .subscribe(any => console.log(any));
-    //     return '';
-    // }
+    bookAdvert(advertId: number): Observable<any> {
+        console.log('bookAdvertId=' + advertId);
+        const userId = this.currentUser.id;
+        const path: string = this.config.users_api + `/${userId}/book-advert/${advertId}`;
+        console.log(path);
+        return this.apiService.put(path, {});
+    }
 }

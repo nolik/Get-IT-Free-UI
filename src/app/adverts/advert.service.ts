@@ -40,7 +40,7 @@ export class AdvertService {
     getAdvert(id: number) {
         return this.adverts.find(
             (a) => {
-                return a._id === id;
+                return a.id === id;
             }
         );
     }

@@ -1,5 +1,5 @@
 export class AdvertModel {
-  public _id: number;
+  public id: number;
   public head: string;
   public content: string;
   public date: Date;
@@ -9,7 +9,7 @@ export class AdvertModel {
 
   constructor(id: number, head: string, content: string, date: Date, imageUrl: string, status: AdvertStatus) {
     if (id) {
-      this._id = id;
+      this.id = id;
     }
 
     this.head = head;
