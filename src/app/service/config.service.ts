@@ -17,15 +17,19 @@ export class ConfigService {
 
     private _adverts_url = this._api_url + '/adverts';
 
-    private _add_advert_url = this._api_url + '/add-advert';
+    private _add_advert_url = this._api_url + '/users/{userId}/add-advert';
 
     private _user_add_advert_url = this._api_url + '/users';
+
+    private _user_get_advert_url = this._api_url + '/users'
 
     private _get_user_info = this._api_url + '/get-user-info';
 
     private _file_upload = this._api_url + '/file-upload';
 
     private _get_all_files = this._api_url + '/get-all-files';
+
+
 
     get refresh_token_url(): string {
         return this._refresh_token_url;
@@ -61,6 +65,10 @@ export class ConfigService {
 
     get add_advert_url_new(): string {
         return this._user_add_advert_url;
+    }
+
+    get user_advert(): string {
+        return this._user_get_advert_url;
     }
 
     get get_all_files(): string {
