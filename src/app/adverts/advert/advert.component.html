@@ -9,9 +9,12 @@
                 <p>
                     {{advert.content}}
                 </p>
+                <p>
+                    {{advert.price}} карма
+                </p>
             </mat-card-content>
             <button
-                    *ngIf="userService.currentUser.id !== null"
+                    *ngIf="userService.currentUser !== undefined"
                     (click)="onBook(advert._id)"
                     mat-button>
                 Book

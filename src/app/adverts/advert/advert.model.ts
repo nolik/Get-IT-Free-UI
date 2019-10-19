@@ -5,9 +5,11 @@ export class AdvertModel {
   public date: Date;
   public imageUrl: string;
   public status: AdvertStatus;
+  public price: number;
 
 
-  constructor(id: number, head: string, content: string, date: Date, imageUrl: string, status: AdvertStatus) {
+  constructor(id: number, head: string, content: string, date: Date, 
+    imageUrl: string, status: AdvertStatus, price: number) {
     if (id) {
       this._id = id;
     }
@@ -17,6 +19,7 @@ export class AdvertModel {
     this.date = date;
     this.imageUrl = imageUrl;
     this.status = status;
+    this.price = price;
   }
 }
 
