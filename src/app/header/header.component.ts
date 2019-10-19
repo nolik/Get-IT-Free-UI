@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   @Output() futureSelected = new EventEmitter<string>();
 
   title = 'Get It Free portal';
+  photoURL = 'http://www.image123.net/thumbs/20191019/co73ugj5f9c1.jpg';
 
   constructor(private userService: UserService,
               private authService: AuthService,
