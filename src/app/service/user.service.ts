@@ -1,4 +1,3 @@
-
 import {map} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
 import {ApiService} from './api.service';
@@ -7,26 +6,34 @@ import {ConfigService} from './config.service';
 @Injectable()
 export class UserService {
 
-  currentUser;
+    currentUser;
 
-  constructor(private apiService: ApiService,
-              private config: ConfigService) {
-  }
+    constructor(private apiService: ApiService,
+                private config: ConfigService) {
+    }
 
-  initUser() {
-    return this.apiService.get(this.config.refresh_token_url).toPromise()
-      .then(res => {
-        if (res.access_token !== null) {
-          return this.getUserInfo().toPromise()
-            .then(user => {
-              this.currentUser = user;
-            });
-        }
-      })
-      .catch(() => null);
-  }
+    initUser() {
+        return this.apiService.get(this.config.refresh_token_url).toPromise()
+            .then(res => {
+                if (res.access_token !== null) {
+                    return this.getUserInfo().toPromise()
+                        .then(user => {
+                            this.currentUser = user;
+                        });
+                }
+            })
+            .catch(() => null);
+    }
 
-  getUserInfo() {
-    return this.apiService.get(this.config.get_user_info).pipe(map(user => this.currentUser = user));
-  }
+    getUserInfo() {
+        return this.apiService.get(this.config.get_user_info).pipe(map(user => this.currentUser = user));
+    }
+
+    // bookAdvert(): string {
+    //     const path: string = this.config.users_api + `/${userId}/add-advert`;
+    //     console.log(path);
+    //     return this.apiService.post(path, newAdvert)
+    //         .subscribe(any => console.log(any));
+    //     return '';
+    // }
 }

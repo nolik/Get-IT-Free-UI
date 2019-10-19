@@ -17,7 +17,7 @@ export class DataStorageService {
   }
 
   add_advert_new(userId: number, newAdvert: AdvertModel) {
-    const path: string = this.config.add_advert_url_new + `/${userId}/add-advert`;
+    const path: string = this.config.users_api + `/${userId}/add-advert`;
     console.log(path);
     return this.apiService.post(path, newAdvert)
         .subscribe(any => console.log(any));

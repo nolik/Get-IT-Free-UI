@@ -50,4 +50,9 @@ export class AdvertService {
         this.adverts.push(newAdvert);
         this.advertsChanged.next(this.adverts.slice());
     }
+
+    bookAdvert(): void {
+        // this.dataStorageService.getAdverts()
+        // this.
+    }
 }
