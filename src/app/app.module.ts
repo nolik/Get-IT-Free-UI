@@ -49,6 +49,8 @@ import {DetailsUploadComponent} from './adverts/add-advert/file-upload/details-u
 import {FormUploadComponent} from './adverts/add-advert/file-upload/form-upload/form-upload.component';
 import {UploadFileService} from './service/upload-file.service';
 import { UserCabinetComponent } from './user-cabinet/user-cabinet.component';
+import {MatOptionModule} from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
 
 export function initUserFactory(userService: UserService) {
   return () => userService.initUser();
@@ -75,23 +77,25 @@ export function initUserFactory(userService: UserService) {
     FormUploadComponent,
     UserCabinetComponent
   ],
-  imports: [
-    BrowserAnimationsModule,
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AppRoutingModule,
-    MatMenuModule,
-    MatTooltipModule,
-    MatButtonModule,
-    MatIconModule,
-    MatInputModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatProgressSpinnerModule,
-    FlexLayoutModule
-  ],
+    imports: [
+        BrowserAnimationsModule,
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        AppRoutingModule,
+        MatMenuModule,
+        MatTooltipModule,
+        MatButtonModule,
+        MatIconModule,
+        MatInputModule,
+        MatToolbarModule,
+        MatCardModule,
+        MatProgressSpinnerModule,
+        FlexLayoutModule,
+        MatOptionModule,
+        MatSelectModule
+    ],
   providers: [
     LoginGuard,
     GuestGuard,

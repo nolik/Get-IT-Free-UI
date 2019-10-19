@@ -19,7 +19,9 @@ export class ConfigService {
 
     private _add_advert_url = this._api_url + '/users/{userId}/add-advert';
 
-    private _user_add_advert_url = this._api_url + '/users';
+    private _users_api = this._api_url + '/users';
+
+    private _user_book_advert = this._api_url + '/users/{userId}/book-advert/{advertId}';
 
     private _user_get_advert_url = this._api_url + '/users'
 
@@ -63,8 +65,8 @@ export class ConfigService {
         return this._add_advert_url;
     }
 
-    get add_advert_url_new(): string {
-        return this._user_add_advert_url;
+    get users_api(): string {
+        return this._users_api;
     }
 
     get user_advert(): string {
