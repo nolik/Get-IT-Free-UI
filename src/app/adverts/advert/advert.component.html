@@ -11,7 +11,8 @@
                 </p>
             </mat-card-content>
             <button
-                    (click)="onBook()"
+                    *ngIf="userService.currentUser.id !== null"
+                    (click)="onBook(advert._id)"
                     mat-button>
                 Book
             </button>

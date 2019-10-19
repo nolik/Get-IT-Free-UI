@@ -25,7 +25,8 @@ export class AdvertComponent implements OnInit {
         this.router.navigate(['advert-detail/', this.advert._id]);
     }
 
-    // onBook() {
-    //   this.userService.
-    // }
+    onBook(id: number) {
+        console.log('boook');
+      // this.userService.
+    }
 }

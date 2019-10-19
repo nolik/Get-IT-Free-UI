@@ -21,23 +21,19 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {DataStorageService} from './service/data-storage.service';
 import {
-  MatButtonModule,
-  MatCardModule,
-  MatIconModule,
-  MatInputModule,
-  MatMenuModule,
-  MatProgressSpinnerModule,
-  MatToolbarModule,
-  MatTooltipModule
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatInputModule,
+    MatMenuModule,
+    MatProgressSpinnerModule,
+    MatToolbarModule,
+    MatTooltipModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {SignupComponent} from './signup/signup.component';
 import {UserService} from './service/user.service';
-import {
-  AdminGuard,
-  GuestGuard,
-  LoginGuard
-} from './guard';
+import {AdminGuard, GuestGuard, LoginGuard} from './guard';
 import {ApiService} from './service/api.service';
 import {ConfigService} from './service/config.service';
 import {LoginComponent} from './login';
@@ -48,7 +44,7 @@ import {ListUploadComponent} from './adverts/add-advert/file-upload/list-upload/
 import {DetailsUploadComponent} from './adverts/add-advert/file-upload/details-upload/details-upload.component';
 import {FormUploadComponent} from './adverts/add-advert/file-upload/form-upload/form-upload.component';
 import {UploadFileService} from './service/upload-file.service';
-import { UserCabinetComponent } from './user-cabinet/user-cabinet.component';
+import {UserCabinetComponent} from './user-cabinet/user-cabinet.component';
 import {MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 
