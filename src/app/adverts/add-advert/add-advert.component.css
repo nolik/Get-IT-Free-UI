@@ -13,3 +13,13 @@
 input.ng-invalid{
   border: 1px solid red;
 }
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 90%;
+}
+

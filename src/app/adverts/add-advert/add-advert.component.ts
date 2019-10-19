@@ -21,7 +21,9 @@ export class AddAdvertComponent implements OnInit {
 
     onAddAdvert(form: NgForm) {
         const value = form.value;
-        const newAdvert = new AdvertModel(undefined, value.name, value.content, new Date, value.imgURL, AdvertStatus.FREE);
+        const newAdvert = new AdvertModel(undefined, value.name, value.content, new Date,
+            'https://loremflickr.com/320/240/book',
+            AdvertStatus.FREE);
         const userId = this.userService.currentUser.id;
         this.advertService.addAdvert(userId, newAdvert);
     }
