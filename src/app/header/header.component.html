@@ -19,13 +19,16 @@
       <button *ngIf="!hasSignedIn()" routerLink="/login" mat-button mat-ripple>
         <span>Login</span>
       </button>
+      <div *ngIf="hasSignedIn()">
+          Karma: {{karmaPoints()}}
+      </div>
       <button
         class="greeting-button"
         *ngIf="hasSignedIn()"
         mat-button mat-ripple
         routerLinkActive="active"
         routerLink="/user-cabinet">
-        <span>Aloha, {{userName()}}</span>
+        <span>{{userName()}}</span>
       </button>
     </div>
   </div>

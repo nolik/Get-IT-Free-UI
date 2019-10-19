@@ -36,4 +36,8 @@ export class HeaderComponent implements OnInit {
     const user = this.userService.currentUser;
     return user.username;
   }
+
+  karmaPoints() {
+    return this.userService.currentUser.karma;
+  }
 }
