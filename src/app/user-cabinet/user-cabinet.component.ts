@@ -9,14 +9,16 @@ import { AdvertModel } from '../adverts/advert/advert.model';
 })
 export class UserCabinetComponent implements OnInit {
   userAdvert: AdvertModel[];
+  bookedAdvert: AdvertModel[];
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.userService.getUserAdverts().subscribe(adverts => {
 
-      console.log(adverts);
-      this.userAdvert = adverts;
+      console.log(JSON.stringify(adverts));
+      this.userAdvert = adverts.userAdverts;
+      this.bookedAdvert = adverts.bookedAdverts;
     });
 
   }

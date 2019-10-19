@@ -31,7 +31,7 @@ export class UserService {
         return this.apiService.get(this.config.get_user_info).pipe(map(user => this.currentUser = user));
     }
 
-    getUserAdverts(): Observable<AdvertModel[]> {
+    getUserAdverts(): Observable<any> {
         const path = this.config.user_advert + `/${this.currentUser.id}/adverts`;
         console.log(path);
         return this.apiService.get(path);
