@@ -1,0 +1,15 @@
+  <a class="advert-link" (click)="onSelected()">
+    <div class="col-lg-3 advert-border">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{advert.head}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image class="card-img" [src]="advert.imageUrl">
+        <mat-card-content>
+          <p>
+            {{advert.content}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </a>
